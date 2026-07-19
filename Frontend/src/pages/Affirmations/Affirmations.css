@@ -1,0 +1,266 @@
+.aff-inner { padding: 2rem; max-width: 1000px; margin: 0 auto; }
+
+.aff-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;
+}
+.aff-title { font-size: 2rem; color: var(--mauve); margin-bottom: 0.3rem; }
+.aff-date { color: var(--mauve-soft); font-size: 0.9rem; }
+
+/* View toggle */
+.aff-view-toggle {
+  display: flex;
+  border: 1.5px solid var(--cream-dark);
+  border-radius: 50px;
+  overflow: hidden;
+  background: white;
+}
+.aff-toggle-btn {
+  padding: 0.5rem 1.1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--mauve-soft);
+  cursor: pointer;
+  transition: all var(--transition);
+  background: none;
+  border: none;
+}
+.aff-toggle-btn.active {
+  background: linear-gradient(135deg, var(--rose), var(--peach));
+  color: white;
+  border-radius: 50px;
+}
+
+/* Today's affirmation banner */
+.today-aff-banner {
+  border-radius: var(--radius-xl);
+  padding: 2rem 2.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.today-aff-banner::before {
+  content: '✨';
+  position: absolute;
+  top: -10px; right: 20px;
+  font-size: 5rem;
+  opacity: 0.08;
+}
+.today-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--rose), var(--peach));
+  color: white;
+  padding: 0.25rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+.today-aff-text {
+  font-size: 1.25rem;
+  color: var(--mauve);
+  line-height: 1.75;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.today-aff-meta {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.82rem;
+  color: var(--mauve-soft);
+}
+
+/* Carousel */
+.aff-carousel-section { margin-bottom: 2.5rem; }
+.aff-carousel {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.aff-nav-btn {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--cream-dark);
+  background: white;
+  color: var(--mauve);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.aff-nav-btn:hover {
+  border-color: var(--rose);
+  color: var(--rose);
+  transform: scale(1.08);
+  box-shadow: var(--shadow);
+}
+
+/* Flip card */
+.aff-flip-card {
+  flex: 1;
+  height: 280px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+.aff-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.aff-flip-card.flipped .aff-flip-inner {
+  transform: rotateY(180deg);
+}
+.aff-flip-front,
+.aff-flip-back {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-xl);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+  border: 1.5px solid rgba(255,255,255,0.7);
+  text-align: center;
+}
+.aff-flip-back {
+  transform: rotateY(180deg);
+}
+.aff-card-emoji { font-size: 3rem; margin-bottom: 1rem; }
+.aff-card-text {
+  font-size: 1.1rem;
+  color: var(--mauve);
+  line-height: 1.75;
+  font-style: italic;
+  margin-bottom: 0.75rem;
+}
+.aff-card-hint {
+  font-size: 0.72rem;
+  color: var(--mauve-soft);
+  letter-spacing: 0.05em;
+  position: absolute;
+  bottom: 1rem;
+}
+.aff-back-category {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--mauve-mid);
+  margin-bottom: 1rem;
+}
+.aff-back-instruction {
+  font-size: 0.95rem;
+  color: var(--mauve);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 1.25rem;
+}
+.aff-back-repeat { display: flex; gap: 1rem; }
+.aff-repeat-num {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  color: var(--mauve-mid);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Card actions */
+.aff-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.aff-dots {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+.aff-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--cream-dark);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition);
+  padding: 0;
+}
+.aff-dot.active {
+  background: var(--rose);
+  width: 20px;
+  border-radius: 4px;
+}
+.aff-dot-more {
+  font-size: 0.72rem;
+  color: var(--mauve-soft);
+}
+
+/* Saved section */
+.aff-saved-section { margin-bottom: 2rem; }
+.aff-saved-grid { display: flex; flex-direction: column; gap: 0.6rem; }
+.aff-saved-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: white;
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  transition: all var(--transition);
+}
+.aff-saved-card:hover { transform: translateX(4px); box-shadow: var(--shadow); }
+.aff-saved-emoji { font-size: 1.3rem; flex-shrink: 0; }
+.aff-saved-text { font-size: 0.9rem; color: var(--mauve); line-height: 1.6; font-style: italic; flex: 1; }
+.aff-saved-remove {
+  background: none; border: none;
+  color: var(--mauve-soft);
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+  transition: all var(--transition);
+}
+.aff-saved-remove:hover { color: hsl(0,60%,55%); background: hsl(0,70%,95%); }
+
+/* All affirmations grid */
+.aff-all-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+}
+.aff-all-card { padding: 1.25rem 1.5rem; position: relative; }
+.aff-all-top { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+.aff-all-text { font-size: 0.88rem; color: var(--mauve); line-height: 1.7; font-style: italic; padding-right: 1.5rem; }
+.aff-bookmark-small {
+  position: absolute; top: 0.75rem; right: 0.75rem;
+  background: none; border: none; cursor: pointer;
+  font-size: 1rem; padding: 0;
+  transition: transform var(--transition);
+}
+.aff-bookmark-small:hover { transform: scale(1.2); }
+.aff-bookmark-small.saved { animation: float 2s ease-in-out; }
+
+@media (max-width: 768px) {
+  .aff-inner { padding: 1rem 1rem 5rem; }
+  .aff-carousel { flex-direction: column; }
+  .aff-nav-btn { display: none; }
+  .aff-flip-card { height: 240px; width: 100%; }
+  .today-aff-text { font-size: 1.05rem; }
+  .aff-all-grid { grid-template-columns: 1fr; }
+}

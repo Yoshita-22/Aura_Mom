@@ -1,0 +1,238 @@
+.settings-inner {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.settings-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.settings-title {
+  color: var(--text-main);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.settings-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.settings-card {
+  padding: 2.5rem;
+  border-radius: 20px;
+}
+
+.settings-group {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.settings-group:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.settings-group .label {
+  font-size: 1.1rem;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Month Grid */
+.settings-month-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.settings-month-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  background: white;
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.settings-month-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.settings-month-btn.active {
+  background: var(--terracotta);
+  color: white;
+  border-color: var(--terracotta);
+  box-shadow: 0 4px 12px rgba(226, 125, 96, 0.3);
+}
+
+.settings-trimester-tag {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(226, 125, 96, 0.1);
+  color: var(--terracotta);
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Language Grid */
+.settings-lang-grid {
+  display: flex;
+  gap: 1rem;
+}
+
+.settings-lang-btn {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  background: white;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text-main);
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.settings-lang-btn:hover {
+  transform: translateY(-2px);
+}
+
+.settings-lang-btn.active {
+  border-color: var(--terracotta);
+  background: rgba(226, 125, 96, 0.05);
+  color: var(--terracotta);
+}
+
+/* Select */
+.settings-select {
+  cursor: pointer;
+  background-color: white;
+}
+
+/* Household */
+.settings-household {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 12px;
+  width: fit-content;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.settings-household-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(226, 125, 96, 0.1);
+  color: var(--terracotta);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.settings-household-btn:hover {
+  background: var(--terracotta);
+  color: white;
+}
+
+.settings-household-num {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  min-width: 2rem;
+  text-align: center;
+}
+
+/* Goals Grid */
+.settings-goal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.settings-goal-btn {
+  padding: 1rem;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  background: white;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.settings-goal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.settings-goal-btn.active {
+  border-color: var(--olive-green);
+  background: rgba(168, 213, 186, 0.1);
+  color: var(--olive-green);
+}
+
+/* Actions */
+.settings-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.settings-save-btn {
+  min-width: 200px;
+}
+
+.settings-error {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #ffebee;
+  color: #c62828;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .settings-inner {
+    padding: 1rem;
+  }
+  
+  .settings-card {
+    padding: 1.5rem;
+  }
+  
+  .settings-title {
+    font-size: 2rem;
+  }
+  
+  .settings-lang-grid {
+    flex-direction: column;
+  }
+  
+  .settings-goal-grid {
+    grid-template-columns: 1fr;
+  }
+}

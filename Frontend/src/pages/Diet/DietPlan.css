@@ -1,0 +1,68 @@
+.diet-inner { padding: 2rem; max-width: 1000px; margin: 0 auto; }
+
+.diet-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;
+}
+.diet-title { font-size: 2rem; color: var(--mauve); margin-bottom: 0.3rem; }
+.diet-date { color: var(--mauve-soft); font-size: 0.9rem; }
+.diet-month-badge { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+/* Nutrients */
+.nutrient-section { margin-bottom: 2rem; }
+.nutrient-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+.nutrient-card { padding: 1rem 1.1rem; }
+.nutrient-top { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem; }
+.nutrient-icon { font-size: 1.4rem; flex-shrink: 0; }
+.nutrient-info { flex: 1; }
+.nutrient-name { font-size: 0.78rem; font-weight: 600; color: var(--mauve-mid); }
+.nutrient-amount { font-size: 0.82rem; color: var(--mauve-soft); }
+.nutrient-pct { font-weight: 700; font-size: 0.9rem; flex-shrink: 0; }
+.nutrient-bar-bg { height: 6px; background: var(--cream-dark); border-radius: 3px; overflow: hidden; }
+.nutrient-bar-fill { height: 100%; border-radius: 3px; transition: width 1s cubic-bezier(0.4,0,0.2,1); }
+
+/* Meal sections */
+.meal-section { margin-bottom: 2rem; }
+.meal-section-header { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem; }
+.meal-period-icon { font-size: 1.5rem; }
+.meal-period-title { font-size: 1.4rem; color: var(--mauve); }
+.meals-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+
+.meal-card { padding: 1.5rem; }
+.meal-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.meal-time-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--rose-light);
+  color: var(--rose-dark);
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.meal-icon { font-size: 1.75rem; }
+.meal-name { font-size: 1rem; font-weight: 700; color: var(--mauve); margin-bottom: 0.75rem; }
+.meal-items { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 1rem; }
+.meal-items li { display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: var(--mauve-mid); }
+.meal-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--rose); flex-shrink: 0; }
+
+.meal-nutrients { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.75rem; }
+.meal-nutrient-tag { padding: 0.2rem 0.6rem; border-radius: 50px; font-size: 0.72rem; font-weight: 500; }
+
+.meal-calories { font-size: 0.82rem; font-weight: 600; color: var(--mauve-soft); }
+
+/* Calories total */
+.calories-total {
+  display: flex; align-items: center; gap: 1.25rem;
+  padding: 1.5rem 2rem;
+  border-radius: var(--radius-lg);
+  margin-bottom: 2rem;
+}
+.calories-total-icon { font-size: 2.5rem; }
+.calories-total-num { font-size: 2rem; font-weight: 700; color: var(--rose); font-family: var(--ff-serif); }
+.calories-total-label { font-size: 0.85rem; color: var(--mauve-soft); margin-top: 0.1rem; }
+
+@media (max-width: 768px) {
+  .diet-inner { padding: 1rem 1rem 5rem; }
+  .nutrient-grid { grid-template-columns: repeat(2, 1fr); }
+  .diet-title { font-size: 1.5rem; }
+}

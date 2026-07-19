@@ -1,0 +1,249 @@
+.med-inner { padding: 2rem; max-width: 1000px; margin: 0 auto; }
+
+.med-header { margin-bottom: 1.5rem; }
+.med-title { font-size: 2rem; color: var(--mauve); margin-bottom: 0.3rem; }
+.med-subtitle { color: var(--mauve-soft); font-size: 0.95rem; }
+
+/* Layout */
+.med-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* Player section */
+.med-player-section {
+  position: relative;
+  background: linear-gradient(145deg, hsl(340,25%,12%) 0%, hsl(250,20%,18%) 100%);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+}
+
+.med-bg-wrapper {
+  position: absolute; inset: 0; z-index: 0;
+}
+.med-bg-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+}
+.med-bg-overlay {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at center, transparent 30%, hsl(340,25%,12%) 90%);
+}
+
+/* Timer */
+.med-timer-container {
+  position: relative; z-index: 1;
+  width: 220px; height: 220px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 2rem;
+}
+.med-timer-svg {
+  position: absolute;
+  width: 100%; height: 100%;
+  animation: spin-slow 8s linear infinite;
+}
+.med-timer-center {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; align-items: center; gap: 0.25rem;
+}
+.med-idle-icon { font-size: 3rem; }
+.med-time {
+  font-size: 2.8rem; font-weight: 700;
+  color: white; font-family: var(--ff-serif);
+  letter-spacing: 0.05em;
+}
+.med-breathe-label {
+  font-size: 0.85rem; color: rgba(255,255,255,0.6);
+  font-style: italic; letter-spacing: 0.1em;
+}
+.med-done-icon { font-size: 3rem; }
+
+/* Controls */
+.med-controls { position: relative; z-index: 1; text-align: center; }
+.med-start-btn { min-width: 200px; min-height: 52px; font-size: 1.05rem; animation: pulse-glow 2s ease-in-out infinite; }
+.med-stop-btn { min-width: 140px; min-height: 48px; color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.3); }
+
+.med-done-section { color: white; text-align: center; }
+.med-done-section h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.med-done-section p { color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 1.5rem; }
+
+/* Panel */
+.med-panel { display: flex; flex-direction: column; gap: 1rem; }
+
+/* Script card */
+.med-script-card { padding: 1.5rem; }
+.med-script-header { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem; }
+.med-script-header h3 { font-size: 1rem; color: var(--mauve); flex: 1; }
+.med-live-badge {
+  padding: 0.15rem 0.6rem;
+  background: hsl(0,70%,60%);
+  color: white;
+  border-radius: 50px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  animation: pulse-glow 1.5s ease-in-out infinite;
+}
+.med-script-placeholder { color: var(--mauve-soft); font-size: 0.9rem; line-height: 1.8; font-style: italic; }
+.med-script-active {
+  color: var(--mauve);
+  font-size: 1rem;
+  line-height: 1.8;
+  font-family: var(--ff-serif);
+  font-style: italic;
+}
+
+.med-script-timeline { display: flex; gap: 0.35rem; margin-top: 1rem; }
+.med-timeline-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--cream-dark);
+  transition: all var(--transition);
+  flex: 1;
+  height: 3px;
+  border-radius: 2px;
+}
+.med-timeline-dot.passed { background: linear-gradient(90deg, var(--rose), var(--peach)); }
+
+/* Affirmation card */
+.med-aff-card { padding: 1.5rem; }
+.med-aff-title { font-size: 1rem; color: var(--mauve); margin-bottom: 0.75rem; }
+.med-aff-text { font-size: 1.05rem; color: var(--mauve-mid); line-height: 1.8; font-style: italic; margin-bottom: 1rem; }
+.med-aff-btn { font-size: 0.85rem; padding: 0.6rem 1.2rem; }
+
+/* Tips card */
+.med-tips-card { padding: 1.5rem; }
+.med-tips-title { font-size: 0.9rem; font-weight: 700; color: var(--mauve); margin-bottom: 0.75rem; }
+.med-tips-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.med-tips-list li { font-size: 0.85rem; color: var(--mauve-mid); display: flex; align-items: flex-start; gap: 0.4rem; }
+
+@media (max-width: 900px) {
+  .med-layout { grid-template-columns: 1fr; }
+  .med-inner { padding: 1rem 1rem 5rem; }
+}
+
+/* Onboarding */
+.med-onboarding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+}
+.med-onboarding-card {
+  max-width: 600px;
+  width: 100%;
+  padding: 3rem;
+  background: white;
+}
+.med-onboarding-card h2 {
+  font-size: 1.4rem;
+  color: var(--mauve);
+  margin-bottom: 1.5rem;
+}
+.med-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.med-chip {
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  border: 1px solid var(--sand-beige);
+  background: transparent;
+  color: var(--mauve);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.med-chip:hover {
+  background: var(--soft-cream);
+}
+.med-chip.active {
+  background: var(--terracotta);
+  color: white;
+  border-color: var(--terracotta);
+}
+.med-other-input {
+  margin-top: 1.5rem;
+}
+
+/* Loading Screen & Premium Loader */
+.med-loading-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  gap: 3rem;
+}
+
+.aura-loader {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aura-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, transparent 0%, var(--terracotta) 25%, var(--sand-beige) 50%, transparent 100%);
+  animation: aura-spin 3s linear infinite;
+  filter: blur(8px);
+  opacity: 0.8;
+}
+
+.aura-core {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background: var(--soft-cream);
+  box-shadow: 0 0 20px var(--terracotta);
+  animation: aura-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes aura-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes aura-pulse {
+  0% { transform: scale(0.9); box-shadow: 0 0 10px var(--terracotta); }
+  100% { transform: scale(1.1); box-shadow: 0 0 30px var(--terracotta); }
+}
+
+.med-premium-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--mauve);
+  letter-spacing: 0.05em;
+  background: linear-gradient(90deg, var(--mauve) 0%, var(--terracotta) 50%, var(--mauve) 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+  text-align: center;
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}

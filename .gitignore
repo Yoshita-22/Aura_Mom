@@ -1,0 +1,19 @@
+# Node
+node_modules/
+dist/
+.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+.env
+.pytest_cache/
+
+# OS
+.DS_Store
+
+.env
+.env.*
+venv/
+__pycache__/
